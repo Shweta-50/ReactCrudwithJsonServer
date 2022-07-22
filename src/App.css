@@ -1,0 +1,9 @@
+.table-container table th, td{
+  padding: 20px;
+  font-size:1.2rem;
+  
+}
+
+.table-container td{
+  padding-top: 15px;
+}
