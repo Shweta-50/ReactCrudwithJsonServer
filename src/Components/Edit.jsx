@@ -26,7 +26,7 @@ const Edit = () => {
     
           }
         getStudent()
-    },[])
+    },[id])
 
    
 

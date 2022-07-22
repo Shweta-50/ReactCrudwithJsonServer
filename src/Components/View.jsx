@@ -16,7 +16,7 @@ const View = () => {
             }
           }
         getStudent()
-    }, [])
+    }, [id])
 
    
 
