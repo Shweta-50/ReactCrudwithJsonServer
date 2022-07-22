@@ -7,17 +7,18 @@ const View = () => {
     const { id } = useParams();
     const [student, setStudent] = useState([])
     useEffect(() => {
+        async function getStudent(){
+            try{
+              const student = await axios.get(`http://localhost:3333/students/${id}`)
+              setStudent(student.data)
+            } catch(error){
+              console.log(error);
+            }
+          }
         getStudent()
-    }, [id])
+    }, [])
 
-    async function getStudent(){
-        try{
-          const student = await axios.get(`http://localhost:3333/students/${id}`)
-          setStudent(student.data)
-        } catch(error){
-          console.log(error);
-        }
-      }
+   
 
 
     return (

@@ -12,24 +12,25 @@ const Edit = () => {
         stuname: " ",
         email : " "
     })
-    
+
     useEffect(() => {
+        async function getStudent(){
+            try{
+              const student = await axios.get(`http://localhost:3333/students/${id}`)
+              setStudent(student.data)
+             
+             
+            } catch(error){
+              console.log(error);
+            }
+    
+          }
         getStudent()
-    }, [id])
+    },[])
 
    
 
-    async function getStudent(){
-        try{
-          const student = await axios.get(`http://localhost:3333/students/${id}`)
-          setStudent(student.data)
-         
-         
-        } catch(error){
-          console.log(error);
-        }
-
-      }
+    
 
 
       function onTextChange(e) {
