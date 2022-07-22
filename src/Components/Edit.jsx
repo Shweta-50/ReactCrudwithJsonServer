@@ -12,6 +12,7 @@ const Edit = () => {
         stuname: " ",
         email : " "
     })
+    
     useEffect(() => {
         getStudent()
     }, [id])
